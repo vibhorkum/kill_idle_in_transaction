@@ -2,7 +2,7 @@
 
 Background worker able to kill connections that are idle in transaction state for a certain amount of time.
 
-This is a modified version of Michael Paquier kill_idle background worker module.
+This is a modified version of Michael Paquier kill_idle background module.
 
 This worker can use the following parameter to decide the interval of time used to scan and kill idle connections.
 
