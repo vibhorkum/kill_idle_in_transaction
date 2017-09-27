@@ -45,3 +45,13 @@ shared_preload_libraries = '$libdir/kill_idle_in_transaction'
 ```
 and restart the PostgreSQL service.
 
+After restarting the service, user can verify the background worker using following command:
+```cmd
+[root@epas96 kill_idle_in_transaction]# ps -eaf|grep kill_idle_in_transaction|grep -v grep
+enterpr+   2599   2590  0 17:51 ?        00:00:00 postgres: bgworker: kill_idle_in_transaction     
+```
+
+Whenever kill_idle_in_transaction background worker kills a process, it also logs the information ins PostgreSQL log file. Following is a sample output:
+```cmd
+2017-09-27 18:16:30 UTC LOG:  Disconnected idle in transaction connection: PID 2768 database: edb username: enterprisedb client_addr: none
+```
