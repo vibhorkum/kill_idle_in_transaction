@@ -201,7 +201,7 @@ kill_idle_in_transaction_load_params(void)
 	 * candidates for execution are scanned at the same time interbal.
 	 */
 	DefineCustomIntVariable("kill_idle_in_transaction.max_idle_time",
-                            "Maximum time allowed for backends to be idle (s).",
+                            "Maximum time allowed for backends to be idle in transaction (s).",
                             "Default of 5s, max of 3600s",
                             &kill_max_idle_time,
                             5,
